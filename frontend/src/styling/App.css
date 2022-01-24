@@ -1,0 +1,64 @@
+aside{
+  border: 1px solid black;
+  left:0;
+  top:0;
+  position: fixed;
+  padding: 10px;
+  background-color: #5861AE;
+  z-index: -10;
+  height: 100%;
+}
+img{
+  z-index: 10;
+  width: 25px;
+  height: 25px;
+}
+.home{
+  padding-top: 40px;
+}
+.additem{
+  padding-top:35px ;
+}
+.optionsbutton{
+  padding-top:35px ;
+
+}
+.orders{
+  width: 179px;
+  height: 25px;
+  margin: 25px;
+  padding-left: 50px;
+  font: normal normal 600 18px/48px Open Sans;
+  opacity: 1;
+  color: #1E2022;
+}
+
+.searchbar,.searchbar > input{
+  width: 100px;
+  height: 20px;
+  
+}
+
+.searchbar{
+  margin: 35px;
+
+}
+.forflex{
+  display: flex;
+  justify-content: space-between;
+  
+}
+input[type=text] {
+  border-top-style: hidden;
+  border-right-style: hidden;
+  border-left-style: hidden;
+  width: 130px;
+  box-sizing: border-box;
+
+  font-size: 16px;
+  background-color: white;
+  background-image: url('../assests/search.svg');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+}
