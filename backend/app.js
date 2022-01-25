@@ -14,6 +14,8 @@ mongoose.connect(url).then(()=>{
 })
 const User = require("./routes/user")
 app.use("/",User)
+const Product = require("./routes/order")
+app.use("/",Product)
 app.listen(5000,()=>{
     console.log("server created successful")
 })

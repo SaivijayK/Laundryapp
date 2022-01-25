@@ -1,13 +1,12 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Login from './Login';
+import Registration from './registrationpage/Registration';
 
 function App() {
   return (
     <>
-      <Login/>
+      <Registration/>
     </>
   );
 }
-
 export default App;
