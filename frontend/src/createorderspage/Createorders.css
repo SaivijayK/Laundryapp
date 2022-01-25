@@ -1,0 +1,70 @@
+
+  .orders{
+    width: 179px;
+    height: 25px;
+    margin: 25px;
+    padding-left: 50px;
+    font: normal normal 600 18px/48px Open Sans;
+    opacity: 1;
+    color: #1E2022;
+  }
+  
+  .searchbar,.searchbar > input{
+    width: 100px;
+    height: 20px;
+    
+  }
+  
+  .searchbar{
+    margin: 35px;
+  
+  }
+  .forflex{
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    padding-left: 20px;
+    padding-right: 20px;
+    
+  }
+  .forinput1[type=text] {
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    width: 130px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../assests/search.svg');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+  }
+  .middle-button{
+    display: flex;  
+    width: 100%;
+      height: 393px;
+      justify-content: center;
+      align-items: center;
+
+
+  }
+ .create-button{
+     height: 50px;
+     
+     padding-left: 25px;
+     padding-right: 25px;
+     border: 1px solid #5861AE;
+     font: normal normal 600 14px/48px Open Sans;
+     color: #5168AE;
+ }
+ .app,body{
+     width: 100%;
+     height: 100%;
+     margin:0px;
+     padding: 0px;
+     top:0px;
+     bottom: 0px;
+     right: 0px;
+     left: 0px;
+ }

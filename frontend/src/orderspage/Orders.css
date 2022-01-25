@@ -1,0 +1,91 @@
+.top-bar{
+    display:flex;
+    border: 1px solid black;
+ 
+    height: 50px;
+
+    justify-content:space-between;
+    align-items: center;
+    padding: 10px;
+ 
+    background-color: #2f2f2f;
+    
+
+}
+.top-bar>div{
+    color: white;
+  padding: 40px;
+}
+.table1
+{
+    width: 95%;
+    border: 1px solid #e0e0e0;
+    margin-top: 20px;
+    margin-left: 50px;
+}
+.product-data{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right:20px;
+}
+.product-data>div{
+    padding: 20px;
+    
+}
+.quantity{
+    margin-left: 50px;
+
+}
+.Wash-type{
+    display: flex;
+    width: 350px;
+    justify-content:space-evenly;
+    align-items: left;
+ 
+}
+.forinput1{
+    border-top-style: hidden;
+    border-right-style: hidden;
+    border-left-style: hidden;
+    width: 150px;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../assests/search.svg');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+.quantity-input{
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: white;
+    width: 60px;
+    border: 1px solid #5861AE;
+    text-align: center;
+    padding: 5px;
+}
+.flex-button{
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    
+}
+.flex-button button{
+    font-size: 16px;
+    width: 80px;
+    border: 1px solid #5861AE;
+    border-radius: 2px 2px 2px 2px;
+    text-align: center;
+    padding: 5px;
+    margin: 15px;
+    float: right;
+
+}
+.proceed-button{
+    background-color:#5861AE;
+    color:#ffffff;
+}
