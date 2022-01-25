@@ -4,14 +4,14 @@
   display: flex;
 }
 .container1 {
-  width: 400px;
+  width: 50%;
   /* border: 1px solid black; */
   height: 766px;
 }
 .container2 {
   /* border: 1px solid black; */
   height: 766px;
-  width: 100%;
+  width: 50%;
   background: #f8f9ff 0% 0% no-repeat padding-box;
 }
 .verticalline {
@@ -21,14 +21,15 @@
   background: #5861ae 0% 0% no-repeat padding-box;
 }
 .heading {
-  width: 284px;
+  width: 200px;
   height: 197px;
-  margin-left: 69.25px;
-  margin-top: 259px;
+  margin-left: 200px;
+  margin-top: 200px;
 }
 .heading p:nth-child(1),
 .heading p:nth-child(2) {
-  margin: 0%;
+  margin-top: -40px;
+  margin-bottom: 20px;
   padding: 0%;
   font: normal normal 900 62px/80px Avenir;
   letter-spacing: 2.48px;
@@ -38,7 +39,7 @@
   width: 175px;
   height: 59px;
   /* border: 1px solid black; */
-  margin-left: 72.38px;
+  margin-left: 200px;
 }
 .content p:nth-child(1),
 .content p:nth-child(2) {
@@ -50,9 +51,9 @@
 }
 .already {
   width: 171px;
-  /* border: 1px solid black; */
-  margin-top: 100px;
-  margin-left: 72.14px;
+  font: normal normal normal Avenir;
+  margin-top: 70px;
+  margin-left: 200px;
   padding-bottom: 10px;
 }
 .already p:nth-child(1) {
@@ -62,10 +63,11 @@
 .signinb {
   width: 150px;
   height: 50px;
+  background-color: ghostwhite;
   border: 2px solid #5861ae;
   border-radius: 4px;
   opacity: 1;
-  margin-left: 72px;
+  margin-left: 200px;
 }
 .signint {
   font: normal normal bold 15px/10px Open Sans;
@@ -74,8 +76,8 @@
 }
 
 .heading1 {
-  margin-left: 63px;
-  margin-top: 45px;
+  margin-left: 200px;
+  margin-top: 135px;
   height: 44px;
   width: 157px;
   /* border: 1px solid black; */
@@ -96,17 +98,15 @@ form {
 .inputfield1 {
   width: 50%;
   display: flex;
+  margin-left: 53px;
   flex-direction: column;
   align-items: left;
 }
 .inputfield1 input:nth-child(1),
-.inputfield1 input:nth-child(2),
-.inputfield1 input:nth-child(3),
-.inputfield1 input:nth-child(4) {
-  height: 60px;
-  margin-left: 63px;
-  margin-top: 10px;
-  border-top: none;
+.inputfield1 input:nth-child(2) {
+  height: 50px;
+  margin-top: 30px;
+  border-top: 40px;
   border-left: none;
   border-right: none;
   border-bottom: 1px solid #989898;
@@ -130,6 +130,7 @@ form {
   border-bottom: 1px solid #989898;
   background: #f8f9ff 0% 0% no-repeat padding-box;
 }
+
 .svgterms {
   margin-left: 290px;
   margin-top: 110px;
@@ -146,16 +147,23 @@ form {
   color: #5861ae;
 }
 .registerbutton {
-  width: 150px;
-  height: 50px;
+  width: 100px;
+  height: 100px;
   display: block;
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: 200px;
+  margin-bottom: -210px;
 }
 .registerbutton button {
   width: 150px;
   height: 50px;
   color: white;
-  background: #5861ae 0% 0% no-repeat padding-box;
-  border-radius: 4px;
+  background: #5861ae 0% 0%;
+  border-radius: 14px;
+
+  font-size: 15px;
+  cursor: pointer;
+}
+.forget {
+  margin-top: 180px;
+  margin-left: -110px;
 }
