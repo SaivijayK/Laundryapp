@@ -1,0 +1,81 @@
+.social{
+    height: 197px;
+    /* border: 1px solid black; */
+    background: transparent 0% 0% no-repeat padding-box;
+    opacity: 1;
+    display: flex;
+    flex-direction: row;
+}
+.aboutus{
+    margin-top: 37px;
+    margin-left: 137px;
+}
+.aboutus p:nth-child(1){
+    font: normal normal medium 18px/24px Avenir;
+}
+.aboutus p:nth-child(2){
+    font: normal normal normal 15px/20px Avenir;
+    letter-spacing: 0.6px;
+    color: #3D3D43;
+}
+.home{
+    margin-top: 40px;
+    margin-left: 419px;
+}
+.home p:nth-child(1){
+    font: normal normal medium 16px/24px Avenir;
+    letter-spacing: 0.16px;
+    color: #182838;
+}
+.home p:nth-child(2),.home p:nth-child(3){
+    font: normal normal normal 14px/24px Avenir;
+    letter-spacing: 0.14px;
+    color: #182838;
+}
+.pricing{
+    margin-top: 40px;
+    margin-left: 77px;
+}
+.pricing p:nth-child(1){
+    font: normal normal medium 16px/24px Avenir;
+    letter-spacing: 0.16px;
+    color: #182838;
+}
+.career{
+    margin-top: 40px;
+    margin-left: 94px;
+}
+.career p:nth-child(1){
+    font: normal normal medium 16px/24px Avenir;
+    letter-spacing: 0.16px;
+    color: #182838;
+}
+.career p:nth-child(2),.career p:nth-child(3){
+    font: normal normal normal 14px/24px Avenir;
+    letter-spacing: 0.14px;
+    color: #182838;
+}
+.contact{
+    margin-left: 62.54px;
+    margin-top: 39px;
+}
+.contact p:nth-child(1){
+    font: normal normal medium 16px/24px Avenir;
+    letter-spacing: 0.16px;
+    color: #182838;
+}
+.socialmedia{
+    margin-left: 103.46px;
+    margin-top: 39px;
+}
+.socialmedia p:nth-child(1){
+    font: normal normal medium 18px/24px Avenir;
+    letter-spacing: 0.18px;
+    color: #182838;
+}
+.icons{
+    display: flex;
+}
+.svg{
+    margin-left: 10px;
+}
