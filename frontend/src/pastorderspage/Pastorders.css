@@ -1,4 +1,91 @@
 .pastordersbody{
-    border:1px solid black;
+    /* border:1px solid black; */
     height:801.5px;
+    display: flex;
+}
+.tooglebar{
+    height: 801.5px;
+    width: 57px;
+    background: #5861AE 0% 0% no-repeat padding-box;
+    /* border:1px soli black */
+}
+.pastorderbox{
+    height: 801.5px;
+    border: 1px solid black;
+    width: 100%;
+}
+.ordersandbutton{
+    display: flex;
+    height: 100px;
+    width: 100%;
+    border: 1px solid black;
+}
+.ordersheading{
+    margin-left: 60px;
+    margin-top: 10px;
+}
+.ordersheading p{
+    font: normal normal 600 18px/48px Open Sans;
+    letter-spacing: 0px;
+    color: #1E2022;
+    text-transform: capitalize;
+}
+.createbutton{
+    margin-left: 980px;
+    margin-top: 35px;
+}
+.createbutton button{
+    width: 107px;
+    height: 32px;
+    border: 2px solid #5861AE;
+    border-radius: 4px;
+    font: normal normal 600 14px Open Sans;
+    letter-spacing: 0px;
+    color: #5861AE;
+}
+.searchbar{
+    margin-top: 40px;
+    margin-left: 10px;
+    height: fit-content;
+    border-bottom: 2px solid grey;
+    margin-bottom: 0%;
+}
+.searchbox{
+    margin-top: 39px;
+    height: fit-content;
+}
+.searchbox input{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom:2px solid grey;
+}
+.homeicon{
+    /* border: 1px solid black; */
+    width:100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 42px;
+}
+.plusicon{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    padding-top: 35px;
+}
+.listicon{
+    /* border: 1px solid black; */
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    background-color: white;
+    padding-top: 35px;
+}
+.list_of_past_orders{
+    width: 1293px;
+    height: fit-content;
+    border: 1px solid black;
+    margin-left:42px;
+    margin-top: 27.9px;
 }
