@@ -1,11 +1,55 @@
-import React from 'react';
+import React,{ useState,useEffect } from 'react';
 import "./Pastorders.css"
 import Loginheader from "./components/Loginheader"
 import Loginfooter from './components/Loginfooter';
+import Modal from './components/Modal';
 
 export default function Pastorders() {
+  // var result
+  var [data1,setData1]=useState(0)
+  var [status, setStatus] = useState(true);
+  async function Data(){
+    try{
+      const res = await fetch("http://localhost:5000/orders",{mode:"cors"});
+      var data = await res.json();
+      if (data.message.length === 0) {
+        setStatus(false);
+      }
+      var result = data.message
+      setData1(result)
+    }catch(e){
+      console.log(e)
+    }
+  }
+  useEffect(() => {
+    Data();
+  }, []);
+
+  // const [users, setusers] = useState(null);
+
+  // + adding the use
+  // useEffect(() => {
+  //   getData();
+
+  //   // we will use async/await to fetch this data
+  //   async function getData() {
+  //     const response = await fetch("http://localhost:5000/orders",{mode:"cors"});
+  //     const data = await response.json();
+  //     // store the data into our user variable
+  //     setData(data.message);
+  //   }
+  // }, []);
+
+
+
+
+
+  // window.location.reload();
+  console.log(data1)
+  const [modalOpen, setModalOpen] = useState(false);
+
   return (
-      <>
+      <div className='Pastorders'>
       {/* start coding here */}
       <Loginheader/>
       <div className='pastordersbody'>
@@ -78,27 +122,47 @@ export default function Pastorders() {
                     </div>
               </div>
               <div className='list_of_past_orders'>
-              <div>
-
-              </div>
-
+              <table> 
+              <tr>
+                <th>Order Id</th>
+                <th>Ordered Date & Time</th>
+                <th>Store Location</th>
+                <th>City</th>
+                <th>Store Phone</th>
+                <th>Total Items</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th className='status'></th>
+                <th>View</th>
+              </tr>
+              {status &&
+                data1.map((item)=>{                  
+                  return(
+                    <tr onClick={() => {
+                      setModalOpen(true);
+                    }}>
+                      <td>{item._id}</td>
+                      <td>{item.date}</td>
+                      <td>{item.Storelocation}</td>
+                      <td>{item.city}</td>
+                      <td>{item.storephone}</td>
+                      <td>{item.totalitems}</td>
+                      <td>{item.productlist[0].price}</td>
+                      <td>{item.status}</td>
+                      <td></td>
+                      <td><svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd"><path d="M12.01 20c-5.065 0-9.586-4.211-12.01-8.424 2.418-4.103 6.943-7.576 12.01-7.576 5.135 0 9.635 3.453 11.999 7.564-2.241 4.43-6.726 8.436-11.999 8.436zm-10.842-8.416c.843 1.331 5.018 7.416 10.842 7.416 6.305 0 10.112-6.103 10.851-7.405-.772-1.198-4.606-6.595-10.851-6.595-6.116 0-10.025 5.355-10.842 6.584zm10.832-4.584c2.76 0 5 2.24 5 5s-2.24 5-5 5-5-2.24-5-5 2.24-5 5-5zm0 1c2.208 0 4 1.792 4 4s-1.792 4-4 4-4-1.792-4-4 1.792-4 4-4z"/></svg></td>
+                    </tr>
+                  );
+                })
+              }
+              </table>
               </div>
           </div>
       </div>
       <Loginfooter/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </>
+      <div>
+      {modalOpen && <Modal setModalOpen={setModalOpen} data1={data1} />}
+      </div>
+    </div>
   );
 }

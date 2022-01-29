@@ -6,8 +6,8 @@ import Pastorders from './pastorderspage/Pastorders';
 function App() {
   return (
     <>
-    <Registration/>
-      {/* <Pastorders/> */}
+    {/* <Registration/> */}
+      <Pastorders/>
     </>
   );
 }
