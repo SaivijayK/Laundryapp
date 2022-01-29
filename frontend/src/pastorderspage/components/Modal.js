@@ -2,15 +2,21 @@ import React,{ useState,useEffect } from 'react';
 import "./Modal.css";
 import circleicon from "../reqimages/circle.png"
 
-function Modal({setModalOpen,data1 }) {
+function Modal(props) {
+  function modalcloser(){
+    props.functionname(false)
+  }
+  function popupopen(){
+    props.functionname(false)
+    props.popupfunction(true)
+  }
   console.log("hello")
-    
   return (
     <div className="modalBackground">
       {/* <h1>welcome to modal</h1> */}
       <div className='heading'>
         <div><p>Summary</p></div>
-        <div className='X'><p>X</p></div>
+        <div onClick={modalcloser} className='X'><p >X</p></div>
       </div>
       <div className='addresses'>
         <div className='location'>
@@ -39,7 +45,7 @@ function Modal({setModalOpen,data1 }) {
       <div><p>Order Details</p></div>
       <div>
         {
-          data1.map((item)=>{
+          props.data1.map((item)=>{
             return(
               <div className='ordersummry'>
                 <div><p>{item.productlist[0].producttype}</p></div>
@@ -50,7 +56,7 @@ function Modal({setModalOpen,data1 }) {
           })
         }
       </div>
-      <div className='Subtotal'><p>Sub total:<b>{data1[0].totalprice}</b></p></div>
+      <div className='Subtotal'><p>Sub total:<b>{props.data1[0].totalprice}</b></p></div>
       <div className='PickupCharges'><p>Pickup Charges: <b>90</b></p></div>
       <div className='Total'>
         <p> Total:<b>Rs560</b></p>
@@ -65,7 +71,7 @@ function Modal({setModalOpen,data1 }) {
         </div>
       </div>
       <div className='Cancel'>
-        <button>Cancel</button>
+        <button onClick={popupopen} >Cancel Order</button>
       </div>
     </div>
   );

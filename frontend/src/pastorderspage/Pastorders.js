@@ -3,6 +3,7 @@ import "./Pastorders.css"
 import Loginheader from "./components/Loginheader"
 import Loginfooter from './components/Loginfooter';
 import Modal from './components/Modal';
+import Popup from './components/Popup';
 
 export default function Pastorders() {
   // var result
@@ -47,6 +48,7 @@ export default function Pastorders() {
   // window.location.reload();
   console.log(data1)
   const [modalOpen, setModalOpen] = useState(false);
+  const [popup,setPopup] = useState(false)
 
   return (
       <div className='Pastorders'>
@@ -136,11 +138,12 @@ export default function Pastorders() {
                 <th>View</th>
               </tr>
               {status &&
-                data1.map((item)=>{                  
+                data1.map((item,key)=>{                  
                   return(
-                    <tr onClick={() => {
+                    <tr key = {item._id} onClick={() => {
                       setModalOpen(true);
                     }}>
+                      {console.log(key)}
                       <td>{item._id}</td>
                       <td>{item.date}</td>
                       <td>{item.Storelocation}</td>
@@ -160,8 +163,9 @@ export default function Pastorders() {
           </div>
       </div>
       <Loginfooter/>
-      <div>
-      {modalOpen && <Modal setModalOpen={setModalOpen} data1={data1} />}
+      <div> 
+      {modalOpen && <Modal functionname={setModalOpen} statename={modalOpen} data1={data1} popupfunction={setPopup} popupstatename={popup}/>}
+      {popup && <Popup popupfunction={setPopup} popupstatename={popup}/>}
       </div>
     </div>
   );
