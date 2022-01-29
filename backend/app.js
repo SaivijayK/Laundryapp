@@ -6,6 +6,12 @@ const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
 const app = express()
 // app.use(bodyParser())
+let allowCrossDomain = function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', "*");
+    res.header('Access-Control-Allow-Headers', "*");
+    next();
+  }
+  app.use(allowCrossDomain);
 app.use(express.json())
 mongoose.connect(url).then(()=>{
     console.log("connected to data base successful")

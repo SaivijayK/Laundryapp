@@ -42,6 +42,7 @@ export default function Registration() {
           <input type="text" name='Email' placeholder='Email'/>
           <input type="text" name='State' placeholder='State' />
           <input type="text" name='Address' placeholder='Address' />
+          <input type="password" name='password' placeholder='password' />
         </div>  
         </form>
         </div>
