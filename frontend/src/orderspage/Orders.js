@@ -15,8 +15,12 @@ import towel from '../assests/towel.svg';
 import bluetowel from '../assests/foldclick.png'
 import washing from '../assests/washing-machine.svg';
 import { useState } from 'react';
+import Modal from './Modal';
 
 export default function Orders() {
+  const [unifieddata,setunifieddata]=useState();
+  const [modalOpen, setModalOpen] = useState(false);
+
   const [shirtquantity,setshirtquantity]=useState("0");
   const [tshirtquantity,settshirtquantity]=useState("0");
   const [trouserquantity,settrouserquantity]=useState("0");
@@ -69,9 +73,14 @@ export default function Orders() {
   const [jeansprice,setjeansprice]=useState(0);
   const [boxersprice,setboxersprice]=useState(0);
 
+  const [bgcolor,setbgcolor]=useState("");
+  
+
+
   
   function washtouch(setfunc,setpara,setpriceof,price) {
     setpriceof(price+20)
+    
     setfunc(!setpara)
     if(setpara==true){
       setpriceof(price-20)
@@ -103,39 +112,201 @@ export default function Orders() {
   function handleshirtChange(event) {
     setshirtquantity(event.target.value);
     setshirtflag(true);
-    console.log(shirtquantity)
+    
   }
       
   function handletshirtChange(event) {
     settshirtquantity(event.target.value);
     settshirtflag(true);
-    console.log(shirtquantity)
   }
   function handlejeansChange(event) {
     setjeansquantity(event.target.value);
     setjeansflag(true);
-    console.log(shirtquantity)
   }
   function handlejoggersChange(event) {
     setjoggersquantity(event.target.value);
     setjoggersflag(true);
-    console.log(shirtquantity)
   }
   function handleboxersChange(event) {
     setboxersquantity(event.target.value);
     setboxersflag(true);
-    console.log(shirtquantity)
   }
   function handletrouserChange(event) {
     settrouserquantity(event.target.value);
     settrouserflag(true);
-    console.log(shirtquantity)
   }
+  function openmodal(){
+    
+   
+  var types=[]
+  var allprices=[]
+  var allservices=[]
+  
+  var shirtservices=[]
+  var tshirtservices=[]
+  var joggerservices=[]
+  var boxerservices=[]
+  var trouserservices=[]
+  var jeanservices=[]
+
+  if(shirtprice>0){
+    types.push("Shirt")
+
+    if(shirtspack){
+      shirtservices.push(" packing ");
+    }
+    if(shirtswash){
+      shirtservices.push(" washing ");
+    }
+    if(shirtsiron){
+      shirtservices.push(" ironing ");
+    }
+    if(shirtsfold){
+      shirtservices.push(" chemical wash ");
+    }
+  }
+  if (shirtservices){
+    allservices.push(shirtservices);
+
+  }
+  if (shirtservices && shirtquantity>0){
+    allprices.push(shirtquantity*shirtprice);
+  } 
+
+  //tshirt
+
+  if(tshirtprice>0){
+    types.push("T-Shirt")
+
+    if(tshirtspack){
+      tshirtservices.push(" packing ");
+    }
+    if(tshirtswash){
+      tshirtservices.push(" washing ");
+    }
+    if(tshirtsiron){
+      tshirtservices.push(" ironing ");
+    }
+    if(shirtsfold){
+      tshirtservices.push(" chemical wash ");
+    }
+  }
+  if (tshirtservices){
+    allservices.push(tshirtservices);
+
+  }
+  if (tshirtservices && tshirtquantity>0){
+    allprices.push(tshirtquantity*tshirtprice);
+  } 
+
+
+  //joggers
+  if(joggerprice>0){
+    types.push("Shirt")
+
+    if(joggerspack){
+      joggerservices.push(" packing ");
+    }
+    if(joggerswash){
+      joggerservices.push(" washing ");
+    }
+    if(joggersiron){
+      joggerservices.push(" ironing ");
+    }
+    if(joggersfold){
+      joggerservices.push(" chemical wash ");
+    }
+  }
+  if (joggerservices){
+    allservices.push(joggerservices);
+  }
+  if (joggerservices && joggersquantity>0){
+    allprices.push(joggerprice);
+  }
+  //boxers
+  if(boxersprice>0){
+    types.push("boxer")
+
+    if(boxerspack){
+      boxerservices.push(" packing ");
+    }
+    if(boxerswash){
+      boxerservices.push(" washing ");
+    }
+    if(boxersiron){
+      boxerservices.push(" ironing ");
+    }
+    if(boxersfold){
+      boxerservices.push(" chemical wash ");
+    }
+  }
+  if (boxerservices){
+    allservices.push(boxerservices);
+
+  }
+  if (boxerservices && boxersquantity>0){
+    allprices.push(boxersprice);
+  }  
+
+  //jeans
+  if(jeansprice>0){
+    types.push("jean")
+
+    if(jeanspack){
+      jeanservices.push(" packing ");
+    }
+    if(jeanswash){
+      jeanservices.push(" washing ");
+    }
+    if(jeansiron){
+      jeanservices.push(" ironing ");
+    }
+    if(jeansfold){
+      jeanservices.push(" chemical wash ");
+    }
+  }
+  if (jeanservices){
+    allservices.push(jeanservices);
+
+  }
+  if (jeanservices && jeansquantity>0){
+    allprices.push(jeansprice);
+  } 
+
+  //trouser
+  if(trouserprice>0){
+    types.push("trouser")
+
+    if(trouserspack){
+      trouserservices.push(" packing ");
+    }
+    if(trouserswash){
+      trouserservices.push(" washing ");
+    }
+    if(trousersiron){
+      trouserservices.push(" ironing ");
+    }
+    if(trousersfold){
+      trouserservices.push(" chemical wash ");
+    }
+  }
+  if (trouserservices){
+    allservices.push(trouserservices);
+
+  }
+  if (trouserservices && trouserquantity>0){
+    allprices.push(trouserprice);
+  } 
+
+  setunifieddata({"alltypes":types,"services":allservices,"price":allprices})
+  console.log(unifieddata)
+  setModalOpen(true);  
+}
   var product_type=["Shirts","T-shirts","Trousers","Jeans","Boxers","Joggers"];
 
   
   var forshirts= 
-    <div className='product-data'>
+    <div className='product-data' >
       <div><b><h3>{product_type[0]}</h3></b>
       <h6>Lorem ipsum is a dummy text</h6></div>
       <div className='quantity'><input className='quantity-input' type="text"  onChange={handleshirtChange} placeholder='0'/></div>
@@ -235,7 +406,7 @@ var forjoggers=
 </div>
 
   return (
-      <>
+      <div  style={{backgroundColor:bgcolor,filter:"blur:10px"}}>
         <Loginheader/>
         <div className='forflex'>
         <div className='orders'>
@@ -262,10 +433,13 @@ var forjoggers=
         </div>
         <div className='flex-button'>
         <button className='cancel-button'>Cancel</button>
-        <button className='proceed-button'>Proceed</button>
+        <button className='proceed-button' onClick={openmodal}>Proceed</button>
         </div>
+
+        {modalOpen && <Modal funcname={setModalOpen} datafunc={setunifieddata} data1={unifieddata} statename={modalOpen}/>}
+
         <Loginfooter/>
         
-      </>
+      </div>
   );
 }
