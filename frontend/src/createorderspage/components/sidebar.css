@@ -1,0 +1,31 @@
+aside{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    top:20px;
+    left: 0px;
+    z-index: -10;
+
+    padding: 10px;
+    background-color: #5861AE;
+   
+    position: fixed;
+    height: 90%;
+  }
+  img{
+    z-index: 10;
+    width: 25px;
+    height: 25px;
+  }
+  .home{
+    padding-top: 40px;
+    margin-left: 0px;
+    left:0px;
+  }
+  .additem{
+    padding-top:35px ;
+  }
+  .optionsbutton{
+    padding-top:35px ;
+  
+  }
